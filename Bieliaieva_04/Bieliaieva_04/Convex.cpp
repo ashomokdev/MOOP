@@ -4,6 +4,7 @@
 
 #include "Convex.h"
 #include "Formulas.h"
+#include "Segment.h"
 #include <cassert>
 
 
@@ -36,7 +37,7 @@ void Convex::process1(const Point& p)
 
 void Convex::process2(const Point& p)
 {
-	if (!sameLine(_a,_b,p))
+	if (Segment (_a, _b).distance(p) > 0)
 	{
 		_pm = new Polygon(_a, _b, p);
 		_angles = many;
@@ -70,7 +71,7 @@ Convex& Convex::add(const Point& p)
 		processN(p);
 		break;
 	default:
-		assert(false /* && "INTERNAL ERROR: Unhandled case in Convex::add()!"*/ );
+		assert(false);
 	}
 	return *this;
 }

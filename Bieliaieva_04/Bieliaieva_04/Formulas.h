@@ -5,15 +5,15 @@
 #include "Segment.h"
 #include <cmath>
 
-inline double triangleArea(const Point & a, const Point & b, const Point & c)
-{
-	return 0.5*((a.x() - c.x()) * (b.y() - c.y()) - (a.y() - c.y()) * (b.x() - c.x()));
-}
-
-inline bool sameLine(const Point & a, const Point & b, const Point & c)
-{
-	return !(bool)triangleArea(a,b,c);
-}
+//inline double triangleArea(const Point & a, const Point & b, const Point & c)
+//{
+//	return 0.5*((a.x() - c.x()) * (b.y() - c.y()) - (a.y() - c.y()) * (b.x() - c.x()));
+//}
+//
+//inline bool sameLine(const Point & a, const Point & b, const Point & c)
+//{
+//	return !(bool)triangleArea(a,b,c);
+//}
 
 inline double dist(const Point & a, const Point & b)
 {

@@ -21,8 +21,7 @@ Polygon::Polygon(const Point& a, const Point& b, const Point& c)
 	}
 	_edges = 3;
 	_perimeter = Segment(a,b).length() + Segment(b,c).length() + Segment(c,a).length();
-	Triangle tr (a, b,c);
-	_area = tr.area();
+	_area = Triangle (a, b,c).area();
 }
 
 Polygon::~Polygon()
@@ -32,8 +31,7 @@ void Polygon::delEdge(const Segment& s, const Point& p)
 {
 	_edges--;
 	_perimeter -= s.length();
-	Triangle tr (p, s);
-	_area += tr.area();
+	_area += Triangle (p, s).area();
 }
 
 void Polygon::process(const Point &t)
@@ -78,7 +76,7 @@ void Polygon::process(const Point &t)
 
 bool Polygon::illuminated(const Segment& s, const Point& p) const
 {
-	double a = triangleArea(s.start(),s.end(),p);
+	double a = Triangle (p, s).area();
 	return ((a < 0.0) || (a == 0.0 && !belongs(p,s)));
 }
 

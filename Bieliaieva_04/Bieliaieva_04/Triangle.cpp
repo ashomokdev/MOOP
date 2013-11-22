@@ -7,19 +7,19 @@ Triangle::Triangle(const double x1, const double y1,
 				   const double x2, const double y2,
 				   const double x3, const double y3):_a(x1,y1), _b(x2, y2), _c(x3, y3), _myID(_freeID++),
 				   _ab(0), _bc(0), _ca(0),_height_a(0), _height_b(0), _height_c(0){
-					   if (area()<=0) 
+					   if (area()<0) 
 						   throw BadTriangle(x1,y1,x2,y2,x3,y3);
 }
 
 Triangle::Triangle(const Point &a, const Point& b, const Point& c):_a(a), _b(b), _c(c), _myID(_freeID++),
 	_ab(0), _bc(0), _ca(0), _height_a(0), _height_b(0), _height_c(0){
-		if (area()<=0) 
+		if (area()<0) 
 			throw BadTriangle(a,b,c);
 }
 
 Triangle::Triangle(const Point &a, const Segment & s): _a(a), _b(s.start()), _c(s.end()), _myID(_freeID++),
 	_ab(0), _bc(0), _ca(0), _height_a(0), _height_b(0), _height_c(0){
-		if (area()<=0) 
+		if (area()<0) 
 			throw BadTriangle(a,s);
 }
 
