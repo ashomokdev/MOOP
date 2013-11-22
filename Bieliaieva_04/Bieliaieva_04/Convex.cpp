@@ -3,8 +3,8 @@
 #define _CONVEX_CPP_
 
 #include "Convex.h"
-#include "Formulas.h"
 #include "Segment.h"
+#include "Triangle.h"
 #include <cassert>
 
 
@@ -43,9 +43,9 @@ void Convex::process2(const Point& p)
 		_angles = many;
 	}
 
-	else if (belongs(_b,Segment(_a,p)))
+	else if (Triangle (_b, Segment(_a,p)).area()==0)
 		_b = p;
-	else if (belongs(_a,Segment(p,_b)))
+	else if (Triangle(_a,Segment(p,_b)).area()==0)
 		_a = p;
 }
 

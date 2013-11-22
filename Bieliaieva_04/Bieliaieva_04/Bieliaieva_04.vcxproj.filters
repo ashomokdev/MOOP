@@ -62,8 +62,5 @@
     <ClInclude Include="Polygon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Formulas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

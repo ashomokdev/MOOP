@@ -3,7 +3,6 @@
 #define _POLYGON_CPP_
 
 #include "Polygon.h"
-#include "Formulas.h"
 #include "Triangle.h"
 
 Polygon::Polygon(const Point& a, const Point& b, const Point& c)
@@ -77,7 +76,7 @@ void Polygon::process(const Point &t)
 bool Polygon::illuminated(const Segment& s, const Point& p) const
 {
 	double a = Triangle (p, s).area();
-	return ((a < 0.0) || (a == 0.0 && !belongs(p,s)));
+	return ((a < 0.0) || (a == 0.0 && !Triangle (p, s).area()==0));
 }
 
 std::ostream& operator<<(std::ostream& os, Polygon p)
