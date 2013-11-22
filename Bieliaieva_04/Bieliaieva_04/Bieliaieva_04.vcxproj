@@ -75,7 +75,6 @@
     <ClInclude Include="Array.h" />
     <ClInclude Include="Convex.h" />
     <ClInclude Include="Deque.h" />
-    <ClInclude Include="Formulas.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="Segment.h" />
